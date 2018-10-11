@@ -7,9 +7,9 @@ require('chai').should();
 
 function shouldBehaveLikeAuthorizable (accounts) {
     describe('as an ownable', function () {
-        it('should have an owner', async function () {
-          const owner = await this.authorizable.owner();
-          owner.should.not.eq(ZERO_ADDRESS);
+    it('should have an owner', async function () {
+            const owner = await this.authorizable.owner();
+            owner.should.not.eq(ZERO_ADDRESS);
         });
 
         it('should allow owner to add', async function() {
@@ -26,7 +26,7 @@ function shouldBehaveLikeAuthorizable (accounts) {
             this.authorizable.removeAuthorized(authorized, { from: owner });
             const result = await this.authorizable.isAuthorized(authorized, { from: owner });
             result.should.eq(false);
-        })
+        });
 
         it('should prevent non-owners from adding', async function () {
             const other = accounts[2];
@@ -45,5 +45,5 @@ function shouldBehaveLikeAuthorizable (accounts) {
 }
 
 module.exports = {
-  shouldBehaveLikeAuthorizable,
+    shouldBehaveLikeAuthorizable,
 };

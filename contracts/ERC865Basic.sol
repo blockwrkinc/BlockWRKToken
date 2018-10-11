@@ -22,9 +22,8 @@ import '../../node_modules/openzeppelin-solidity/contracts/token/ERC20/ERC20.sol
         internal;
 
      event TransferPreSigned(
+         address indexed delegate,
          address indexed from,
          address indexed to,
-         address indexed delegate,
-         uint256 amount,
-         uint256 fee);
+         uint256 value);
 }

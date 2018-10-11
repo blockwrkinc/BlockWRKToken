@@ -6,12 +6,14 @@ contract ERC865BasicTokenMock is ERC865BasicToken {
     constructor(
         address initialAccount,
         uint256 initialBalance,
-        address _feeAccount
+        address _feeAccount,
+        bytes _signature2
     )
         public
     {
         balances[initialAccount] = initialBalance;
         totalSupply_ = initialBalance;
         feeAccount = _feeAccount;
+        signatures[_signature2] = true;
     }
 }

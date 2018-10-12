@@ -34,22 +34,14 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     constructor() public {
         //feeAccount =
         //distributionPoolWallet =
+        //inAppPurchaseWallet =
         //reservedTokenWallet =
-
-        //premineDistributionPool = 56000000000000;
-        //premineReserved = 20000000000000;
+        //premineDistributionPool = decimalValue.mul(5600000000);
+        //premineReserved = decimalValue.mul(2000000000);
         //INITIAL_SUPPLY = premineDistributionPool.add(premineReserved);
         //balances[distributionPoolWallet] = premineDistributionPool;
         //balances[reservedTokenWallet] = premineReserved;
-        totalSupply_ = INITIAL_SUPPLY;
-
-        //remove after testing
-        INITIAL_SUPPLY = 120000000;
-        balances[msg.sender] = INITIAL_SUPPLY;
-
-        //need to determine if feeAccount will be the same as reservedTokenWallet
-        feeAccount = 0x14723a09acff6d2a60dcdf7aa4aff308fddc160c;
-        taxRate = 2;
+        //totalSupply_ = INITIAL_SUPPLY;
     }
 
     /**
@@ -64,7 +56,6 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     )
         public
         onlyAuthorized
-        returns (bool)
     {
         require(_value <= balances[distributionPoolWallet]);
         require(_to != address(0));
@@ -72,8 +63,6 @@ contract BlockWRKToken is TaxedToken, Authorizable {
         balances[distributionPoolWallet] = balances[distributionPoolWallet].sub(_value);
         balances[_to] = balances[_to].add(_value);
         emit Transfer(distributionPoolWallet, _to, _value);
-
-        return true;
     }
 
     /**
@@ -90,7 +79,6 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     )
         public
         onlyAuthorized
-        returns (bool)
     {
         require(_value <= balances[inAppPurchaseWallet]);
         require(_to != address(0));
@@ -101,47 +89,32 @@ contract BlockWRKToken is TaxedToken, Authorizable {
         emit Transfer(inAppPurchaseWallet, _to, netAmount);
         balances[feeAccount] = balances[feeAccount].add(_fee);
         emit Transfer(inAppPurchaseWallet, feeAccount, _fee);
-
-        return true;
-    }
-
-    /**
-     * @dev Allows owner to retrieve any Ether sent to this contract.
-     */
-    function rescueLostEther() public onlyOwner returns (bool) {
-        owner.transfer(address(this).balance);
     }
 
     /**
      * @dev Allows owner to set the percentage fee charged by TaxedToken on external transfers.
      * @param _newRate The amount to be set.
      */
-    function setTaxRate(uint8 _newRate) public onlyOwner returns (bool) {
+    function setTaxRate(uint8 _newRate) public onlyOwner {
         taxRate = _newRate;
-
-        return true;
     }
 
     /**
      * @dev Allows owner to set the fee account to receive transfer fees.
      * @param _newAddress The address to be set.
      */
-    function setFeeAccount(address _newAddress) public onlyOwner returns (bool) {
+    function setFeeAccount(address _newAddress) public onlyOwner {
         require(_newAddress != address(0));
         feeAccount = _newAddress;
-
-        return true;
     }
 
     /**
      * @dev Allows owner to set the wallet that holds WRK for sale via in-app purchases with fiat.
      * @param _newAddress The address to be set.
      */
-    function setInAppPurchaseWallet(address _newAddress) public onlyOwner returns (bool) {
+    function setInAppPurchaseWallet(address _newAddress) public onlyOwner {
         require(_newAddress != address(0));
         inAppPurchaseWallet = _newAddress;
-
-        return true;
     }
 
     /**
@@ -162,10 +135,7 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     )
         public
         onlyAuthorized
-        returns (bool)
     {
         _transferPreSigned(_signature, _from, _to, _value, _fee, _nonce);
-
-        return true;
     }
 }

@@ -14,7 +14,7 @@ contract Authorizable is Ownable {
     using SafeMath for uint256;
 
     address[] public authorized;
-    mapping(address => bool) authorizedIndex;
+    mapping(address => bool) internal authorizedIndex;
     uint8 public numAuthorized;
 
     /**

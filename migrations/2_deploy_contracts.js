@@ -1,6 +1,5 @@
-//var BlockWRKICO = artifacts.require("./BlockWRKICO");
-var BlockWRKToken = artifacts.require("./BlockWRKToken");
+var BlockWRKICO = artifacts.require("./BlockWRKICO");
 
 module.exports = function(deployer) {
-    deployer.deploy(BlockWRKToken);
+    deployer.deploy(BlockWRKICO);
 };

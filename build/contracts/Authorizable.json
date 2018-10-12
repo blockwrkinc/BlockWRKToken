@@ -187,7 +187,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 133,
-        "sourceUnit": 1778,
+        "sourceUnit": 1865,
         "src": "26:82:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -198,7 +198,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 133,
-        "sourceUnit": 1692,
+        "sourceUnit": 1779,
         "src": "109:78:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -212,10 +212,10 @@
               "id": 4,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1777,
+              "referencedDeclaration": 1864,
               "src": "495:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1777",
+                "typeIdentifier": "t_contract$_Ownable_$1864",
                 "typeString": "contract Ownable"
               }
             },
@@ -225,7 +225,7 @@
           }
         ],
         "contractDependencies": [
-          1777
+          1864
         ],
         "contractKind": "contract",
         "documentation": "@title Authorizable\n@dev The Authorizable contract allows the owner to set a number of additional\nacccounts with limited administrative privileges to simplify user permissions.\nOnly the contract owner can add or remove authorized accounts.\n@author jsdavis28",
@@ -233,7 +233,7 @@
         "id": 132,
         "linearizedBaseContracts": [
           132,
-          1777
+          1864
         ],
         "name": "Authorizable",
         "nodeType": "ContractDefinition",
@@ -245,10 +245,10 @@
               "id": 6,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1691,
+              "referencedDeclaration": 1778,
               "src": "515:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1691",
+                "typeIdentifier": "t_contract$_SafeMath_$1778",
                 "typeString": "library SafeMath"
               }
             },
@@ -508,7 +508,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2210,
+                        "referencedDeclaration": 2297,
                         "src": "862:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -571,7 +571,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2210,
+                          "referencedDeclaration": 2297,
                           "src": "898:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -734,7 +734,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2210,
+                              "referencedDeclaration": 2297,
                               "src": "1105:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -800,10 +800,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2213,
-                        2214
+                        2300,
+                        2301
                       ],
-                      "referencedDeclaration": 2213,
+                      "referencedDeclaration": 2300,
                       "src": "1084:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -1158,7 +1158,7 @@
                                 "lValueRequested": false,
                                 "memberName": "sub",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 1666,
+                                "referencedDeclaration": 1753,
                                 "src": "1489:21:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -1269,7 +1269,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1725,
+                  "referencedDeclaration": 1812,
                   "src": "1334:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1690,7 +1690,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1725,
+                  "referencedDeclaration": 1812,
                   "src": "2110:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1783,7 +1783,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 133,
-        "sourceUnit": 1778,
+        "sourceUnit": 1865,
         "src": "26:82:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1794,7 +1794,7 @@
         "id": 3,
         "nodeType": "ImportDirective",
         "scope": 133,
-        "sourceUnit": 1692,
+        "sourceUnit": 1779,
         "src": "109:78:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1808,10 +1808,10 @@
               "id": 4,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1777,
+              "referencedDeclaration": 1864,
               "src": "495:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$1777",
+                "typeIdentifier": "t_contract$_Ownable_$1864",
                 "typeString": "contract Ownable"
               }
             },
@@ -1821,7 +1821,7 @@
           }
         ],
         "contractDependencies": [
-          1777
+          1864
         ],
         "contractKind": "contract",
         "documentation": "@title Authorizable\n@dev The Authorizable contract allows the owner to set a number of additional\nacccounts with limited administrative privileges to simplify user permissions.\nOnly the contract owner can add or remove authorized accounts.\n@author jsdavis28",
@@ -1829,7 +1829,7 @@
         "id": 132,
         "linearizedBaseContracts": [
           132,
-          1777
+          1864
         ],
         "name": "Authorizable",
         "nodeType": "ContractDefinition",
@@ -1841,10 +1841,10 @@
               "id": 6,
               "name": "SafeMath",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1691,
+              "referencedDeclaration": 1778,
               "src": "515:8:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_SafeMath_$1691",
+                "typeIdentifier": "t_contract$_SafeMath_$1778",
                 "typeString": "library SafeMath"
               }
             },
@@ -2104,7 +2104,7 @@
                         "name": "msg",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2210,
+                        "referencedDeclaration": 2297,
                         "src": "862:3:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_magic_message",
@@ -2167,7 +2167,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2210,
+                          "referencedDeclaration": 2297,
                           "src": "898:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -2330,7 +2330,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2210,
+                              "referencedDeclaration": 2297,
                               "src": "1105:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -2396,10 +2396,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2213,
-                        2214
+                        2300,
+                        2301
                       ],
-                      "referencedDeclaration": 2213,
+                      "referencedDeclaration": 2300,
                       "src": "1084:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$returns$__$",
@@ -2754,7 +2754,7 @@
                                 "lValueRequested": false,
                                 "memberName": "sub",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 1666,
+                                "referencedDeclaration": 1753,
                                 "src": "1489:21:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$bound_to$_t_uint256_$",
@@ -2865,7 +2865,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1725,
+                  "referencedDeclaration": 1812,
                   "src": "1334:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3286,7 +3286,7 @@
                   "name": "onlyOwner",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 1725,
+                  "referencedDeclaration": 1812,
                   "src": "2110:9:0",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -3358,5 +3358,5 @@
   },
   "networks": {},
   "schemaVersion": "2.0.0",
-  "updatedAt": "2018-10-12T08:51:29.942Z"
+  "updatedAt": "2018-10-12T10:07:16.872Z"
 }

@@ -24,6 +24,9 @@ import "./BlockWRKToken.sol";
      */
     uint256 internal availableInCurrentTier;
     uint256 internal availableInSale;
+    uint256 internal totalPremineVolume = 76000000000000;
+    uint256 internal totalSaleVolume = 43000000000000;
+    uint256 internal totalTokenVolume = 119000000000000;
     uint256 internal tier1Rate = 200000;
     uint256 internal tier2Rate = 40000;
     uint256 internal tier3Rate = 20000;
@@ -34,25 +37,24 @@ import "./BlockWRKToken.sol";
     uint256 internal tier8Rate = 10000;
     uint256 internal tier9Rate = 10000;
     uint256 internal tier10Rate = 10000;
-    uint256 internal tier1Volume = decimalValue.mul(100000000);
-    uint256 internal tier2Volume = decimalValue.mul(200000000);
-    uint256 internal tier3Volume = decimalValue.mul(500000000);
-    uint256 internal tier4Volume = decimalValue.mul(500000000);
-    uint256 internal tier5Volume = decimalValue.mul(500000000);
-    uint256 internal tier6Volume = decimalValue.mul(500000000);
-    uint256 internal tier7Volume = decimalValue.mul(500000000);
-    uint256 internal tier8Volume = decimalValue.mul(500000000);
-    uint256 internal tier9Volume = decimalValue.mul(500000000);
-    uint256 internal tier10Volume = decimalValue.mul(500000000);
-    uint256 internal totalSaleVolume = decimalValue.mul(4300000000);
-    uint256 internal totalTokenVolume = decimalValue.mul(11900000000);
+    uint256 internal tier1Volume = totalPremineVolume.add(1000000000000);
+    uint256 internal tier2Volume = tier1Volume.add(2000000000000);
+    uint256 internal tier3Volume = tier2Volume.add(5000000000000);
+    uint256 internal tier4Volume = tier3Volume.add(5000000000000);
+    uint256 internal tier5Volume = tier4Volume.add(5000000000000);
+    uint256 internal tier6Volume = tier5Volume.add(5000000000000);
+    uint256 internal tier7Volume = tier6Volume.add(5000000000000);
+    uint256 internal tier8Volume = tier7Volume.add(5000000000000);
+    uint256 internal tier9Volume = tier8Volume.add(5000000000000);
+    uint256 internal tier10Volume = tier9Volume.add(5000000000000);
 
     constructor() public {
-        cap = 20000000000000000000000000000000000000000;
-        //salesWallet =
-        openingTime = now;
-        closingTime = now;
+        cap = 9999999999999999999999999999999999999999999999;
+        salesWallet = 0x2eddee216ffb08e01cb67ca5b4f405fcbbb3c1fb;
+        openingTime = 1539346800;
+        closingTime = 1539348900;
     }
+
 
     /**
      * Event for token purchase logging
@@ -283,26 +285,51 @@ import "./BlockWRKToken.sol";
         _deliverTokens(_beneficiary, _tokenAmount);
     }
 
+    /**
+     * @dev Calculates remaining tokens available in the current tier after a sale is processed
+     * @param _tierPreviousRemaining Number of tokens remaining prior to sale
+     * @param _newIssue Number of tokens to be purchased
+     */
     function _setAvailableInCurrentTier(uint256 _tierPreviousRemaining, uint256 _newIssue) internal {
         availableInCurrentTier = _tierPreviousRemaining.sub(_newIssue);
     }
 
+    /**
+     * @dev Calculates remaining tokens available in the ICO after a sale is processed
+     * @param _newIssue Number of tokens to be purchased
+     */
     function _setAvailableInSale(uint256 _newIssue) internal {
         availableInSale = totalSaleVolume.sub(_newIssue);
     }
 
+    /**
+     * @dev Sets the current tier rate based on sale volume
+     * @param _rate The new rate
+     */
     function _setCurrentTierRate(uint256 _rate) internal {
         currentTierRate = _rate;
     }
 
+    /**
+     * @dev Returns the remaining number of tokens for sale
+     * @return Total remaining tokens available for sale
+     */
     function tokensRemainingInSale() public view returns (uint256) {
         return availableInSale;
     }
 
+    /**
+     * @dev Returns the remaining number of tokens for sale in the current tier
+     * @return Total remaining tokens available for sale in the current tier
+     */
     function tokensRemainingInTier() public view returns (uint256) {
         return availableInCurrentTier;
     }
 
+    /**
+     * @dev Allows the owner to transfer any remaining tokens not sold to a wallet
+     * @return Total remaining tokens available for sale
+     */
      function transferRemainingTokens() public onlyOwner {
          //require that sale is closed
          require(hasClosed());

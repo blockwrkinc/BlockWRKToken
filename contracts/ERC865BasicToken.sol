@@ -7,9 +7,8 @@ import "../../node_modules/openzeppelin-solidity/contracts/token/ERC20/StandardT
  * @title ERC865BasicToken
  * @dev Simpler version of the ERC865 token from https://github.com/adilharis2001/ERC865Demo
  * @author jsdavis28
- * @notice ERC865Token allows for users to pay gas costs in an ERC20 token to a delegate
+ * @notice ERC865Token allows for users to pay gas costs to a delegate in an ERC20 token
  * https://github.com/ethereum/EIPs/issues/865
- *
  */
 
  contract ERC865BasicToken is ERC865Basic, StandardToken {

@@ -18,7 +18,7 @@ contract Authorizable is Ownable {
     uint8 public numAuthorized;
 
     /**
-     * @dev The Authorizable constructor sets the original `owner` of the contract
+     * @dev The Authorizable constructor sets the owner as authorized
      * as authorized.
      */
     constructor() public {

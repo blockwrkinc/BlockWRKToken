@@ -69,6 +69,6 @@ contract TaxedToken is ERC865BasicToken {
         allowed[_from][msg.sender] = allowed[_from][msg.sender].sub(_value);
         emit Transfer(_from, feeAccount, fee);
 
-        return true; 
+        return true;
     }
 }

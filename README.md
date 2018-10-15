@@ -6,6 +6,9 @@ for transfers outside the application and [ERC865 functionality](https://github.
 for internal tranfers that abstract gas costs away from the user, allowing a delegate 
 (in this case, the application) to pay gas in Ether and then be reimbursed in WRK. 
 
-Note(s) to auditor: OpenZeppelin contract imports may need to be edited for 
+Note(s) to auditor: 
+- OpenZeppelin contract imports may need to be edited for 
 compiling and testing, depending on location of the directory in relation 
 to node_modules on your local machine. 
+
+- truffle.js is set for testing with Ganache. 

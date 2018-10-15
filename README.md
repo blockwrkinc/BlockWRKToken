@@ -12,3 +12,5 @@ compiling and testing, depending on location of the directory in relation
 to node_modules on your local machine. 
 
 - truffle.js is set for testing with Ganache. 
+
+- Contract constructors may contain test data used during Ropsten deployment, which should be commented out before running tests. 

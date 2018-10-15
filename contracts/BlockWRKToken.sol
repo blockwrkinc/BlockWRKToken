@@ -5,6 +5,9 @@ import "./Authorizable.sol";
 
 /**
  * @title BlockWRKToken
+ * @dev BlockWRKToken contains administrative features that allow the BlockWRK
+ *  application to interface with the BlockWRK token, an ERC20-compliant token
+ *  that integrates taxed token and ERC865 functionality.
  * @author jsdavis28
  */
 
@@ -12,8 +15,8 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     /**
      * @dev Sets token information.
      */
-    string public name = "BlockWRKTEST";
-    string public symbol = "WRKTST1";
+    string public name = "BlockWRK";
+    string public symbol = "WRK";
     uint8 public decimals = 4;
     uint256 public INITIAL_SUPPLY;
 
@@ -32,6 +35,7 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     uint256 internal decimalValue = 10000;
 
     constructor() public {
+        //Test values
         feeAccount = 0x2EDDEe216fFB08E01Cb67CA5B4F405FCbBB3C1fB;
         distributionPoolWallet = 0x5ad5f036280b996e28f49783089d96c77af1a6a6;
         inAppPurchaseWallet = 0x2EDDEe216fFB08E01Cb67CA5B4F405FCbBB3C1fB;

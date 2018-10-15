@@ -6,7 +6,7 @@ import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
 /**
  * @title Authorizable
  * @dev The Authorizable contract allows the owner to set a number of additional
- * acccounts with limited administrative privileges to simplify user permissions.
+ *  acccounts with limited administrative privileges to simplify user permissions.
  * Only the contract owner can add or remove authorized accounts.
  * @author jsdavis28
  */
@@ -19,7 +19,6 @@ contract Authorizable is Ownable {
 
     /**
      * @dev The Authorizable constructor sets the owner as authorized
-     * as authorized.
      */
     constructor() public {
         authorized.length = 2;

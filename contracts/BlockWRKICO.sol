@@ -49,6 +49,7 @@ import "./BlockWRKToken.sol";
     uint256 internal tier10Volume = tier9Volume.add(5000000000000);
 
     constructor() public {
+        //Test values
         cap = 9999999999999999999999999999999999999999999999;
         salesWallet = 0x2eddee216ffb08e01cb67ca5b4f405fcbbb3c1fb;
         openingTime = 1539346800;

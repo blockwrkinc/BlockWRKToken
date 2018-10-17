@@ -22,40 +22,64 @@ import "./BlockWRKToken.sol";
     /**
      * @dev Sets private variables for custom token functions.
      */
-    uint256 internal availableInCurrentTier;
-    uint256 internal availableInSale;
-    uint256 internal totalPremineVolume = 76000000000000;
-    uint256 internal totalSaleVolume = 43000000000000;
-    uint256 internal totalTokenVolume = 119000000000000;
-    uint256 internal tier1Rate = 200000;
-    uint256 internal tier2Rate = 40000;
-    uint256 internal tier3Rate = 20000;
-    uint256 internal tier4Rate = 10000;
-    uint256 internal tier5Rate = 10000;
-    uint256 internal tier6Rate = 10000;
-    uint256 internal tier7Rate = 10000;
-    uint256 internal tier8Rate = 10000;
-    uint256 internal tier9Rate = 10000;
-    uint256 internal tier10Rate = 10000;
-    uint256 internal tier1Volume = totalPremineVolume.add(1000000000000);
-    uint256 internal tier2Volume = tier1Volume.add(2000000000000);
-    uint256 internal tier3Volume = tier2Volume.add(5000000000000);
-    uint256 internal tier4Volume = tier3Volume.add(5000000000000);
-    uint256 internal tier5Volume = tier4Volume.add(5000000000000);
-    uint256 internal tier6Volume = tier5Volume.add(5000000000000);
-    uint256 internal tier7Volume = tier6Volume.add(5000000000000);
-    uint256 internal tier8Volume = tier7Volume.add(5000000000000);
-    uint256 internal tier9Volume = tier8Volume.add(5000000000000);
-    uint256 internal tier10Volume = tier9Volume.add(5000000000000);
+     uint256 internal availableInCurrentTier;
+     uint256 internal availableInSale;
+     uint256 internal totalPremineVolume;
+     uint256 internal totalSaleVolume;
+     uint256 internal totalTokenVolume;
+     uint256 internal tier1Rate;
+     uint256 internal tier2Rate;
+     uint256 internal tier3Rate;
+     uint256 internal tier4Rate;
+     uint256 internal tier5Rate;
+     uint256 internal tier6Rate;
+     uint256 internal tier7Rate;
+     uint256 internal tier8Rate;
+     uint256 internal tier9Rate;
+     uint256 internal tier10Rate;
+     uint256 internal tier1Volume;
+     uint256 internal tier2Volume;
+     uint256 internal tier3Volume;
+     uint256 internal tier4Volume;
+     uint256 internal tier5Volume;
+     uint256 internal tier6Volume;
+     uint256 internal tier7Volume;
+     uint256 internal tier8Volume;
+     uint256 internal tier9Volume;
+     uint256 internal tier10Volume;
 
-    constructor() public {
-        //Test values
-        cap = 9999999999999999999999999999999999999999999999;
-        salesWallet = 0x2eddee216ffb08e01cb67ca5b4f405fcbbb3c1fb;
-        openingTime = 1539346800;
-        closingTime = 1539348900;
-    }
+     constructor() public {
+         //Test values
+         // cap = 9999999999999999999999999999999999999999999999;
+         // salesWallet = 0x2eddee216ffb08e01cb67ca5b4f405fcbbb3c1fb;
+         // openingTime = 1539346800;
+         // closingTime = 1539348900;
 
+         // totalPremineVolume = 76000000000000;
+         // totalSaleVolume = 43000000000000;
+         // totalTokenVolume = 119000000000000;
+         // availableInSale = totalSaleVolume;
+         // tier1Rate = 200000;
+         // tier2Rate = 40000;
+         // tier3Rate = 20000;
+         // tier4Rate = 10000;
+         // tier5Rate = 10000;
+         // tier6Rate = 10000;
+         // tier7Rate = 10000;
+         // tier8Rate = 10000;
+         // tier9Rate = 10000;
+         // tier10Rate = 10000;
+         // tier1Volume = totalPremineVolume.add(1000000000000);
+         // tier2Volume = tier1Volume.add(2000000000000);
+         // tier3Volume = tier2Volume.add(5000000000000);
+         // tier4Volume = tier3Volume.add(5000000000000);
+         // tier5Volume = tier4Volume.add(5000000000000);
+         // tier6Volume = tier5Volume.add(5000000000000);
+         // tier7Volume = tier6Volume.add(5000000000000);
+         // tier8Volume = tier7Volume.add(5000000000000);
+         // tier9Volume = tier8Volume.add(5000000000000);
+         // tier10Volume = tier9Volume.add(5000000000000);
+     }
 
     /**
      * Event for token purchase logging
@@ -338,11 +362,8 @@ import "./BlockWRKToken.sol";
          //require that tokens are still remaining after close
          require(availableInSale > 0);
 
-         //calculate remaining seed tokens
-         uint256 finalTokensRemaining = totalTokenVolume.sub(totalSupply_);
-
          //send remaining tokens to distribution pool wallet
-         balances[distributionPoolWallet] = balances[distributionPoolWallet].add(finalTokensRemaining);
-         emit CloseoutSale(distributionPoolWallet, finalTokensRemaining);
+         balances[distributionPoolWallet] = balances[distributionPoolWallet].add(availableInSale);
+         emit CloseoutSale(distributionPoolWallet, availableInSale);
      }
 }

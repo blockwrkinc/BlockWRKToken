@@ -7,10 +7,8 @@ for internal tranfers that abstract gas costs away from the user, allowing a del
 (in this case, the application) to pay gas in Ether and then be reimbursed in WRK. 
 
 Note(s) to auditor: 
-- OpenZeppelin contract imports may need to be edited for 
-compiling and testing, depending on location of the directory in relation 
-to node_modules on your local machine. 
+- All unit tests passing. Development completed as of 1539811966. 
 
 - truffle.js is set for testing with Ganache. 
 
-- Contract constructors may contain test data used during Ropsten deployment, which should be commented out before running tests. 
+- Contract constructors may contain test data used during Ropsten deployment, which should be commented out before running tests in Truffle. 

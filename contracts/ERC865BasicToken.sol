@@ -79,7 +79,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
         returns (bytes32)
     {
         //Create a copy of thehashed message signed by the token holder
-        bytes32 hash = keccak256(_to, _value, _fee, _nonce);
+        bytes32 hash = keccak256(abi.encodePacked(_to, _value, _fee, _nonce));
 
         //Add prefix to hash
         return _prefix(hash);
@@ -91,7 +91,7 @@ import "openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
      * @return Prefixed hashed message to return from _transferPreSignedHashing.
      */
     function _prefix(bytes32 _hash) internal pure returns (bytes32) {
-        return keccak256("\x19Ethereum Signed Message:\n32", _hash);
+        return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", _hash));
     }
 
     /**

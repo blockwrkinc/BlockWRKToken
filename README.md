@@ -7,8 +7,4 @@ for internal tranfers that abstract gas costs away from the user, allowing a del
 (in this case, the application) to pay gas in Ether and then be reimbursed in WRK. 
 
 Note(s) to auditor: 
-- All unit tests passing. Development completed as of 1539811966. 
-
-- truffle.js is set for testing with Ganache. 
-
-- Contract constructors may contain test data used during Ropsten deployment, which should be commented out before running tests in Truffle. 
+- All audit revisions completed as of 1540437453. 

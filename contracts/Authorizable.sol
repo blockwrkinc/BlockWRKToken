@@ -1,7 +1,7 @@
 pragma solidity 0.4.24;
 
-import "../../node_modules/openzeppelin-solidity/contracts/ownership/Ownable.sol";
-import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/ownership/Ownable.sol";
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 /**
  * @title Authorizable
@@ -11,6 +11,7 @@ import "../../node_modules/openzeppelin-solidity/contracts/math/SafeMath.sol";
  * @author jsdavis28
  */
 contract Authorizable is Ownable {
+    using SafeMath for uint256;
 
     address[] public authorized;
     mapping(address => bool) internal authorizedIndex;

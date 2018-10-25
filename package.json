@@ -1,0 +1,26 @@
+{
+  "name": "BlockWRKToken",
+  "version": "1.0.0",
+  "description": "BlockWRK token and ICO contracts",
+  "main": "truffle.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blockwrkinc/BlockWRKToken.git"
+  },
+  "keywords": [],
+  "author": "jsdavis28",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blockwrkinc/BlockWRKToken/issues"
+  },
+  "homepage": "https://github.com/blockwrkinc/BlockWRKToken#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "1.12.0"
+  }
+}

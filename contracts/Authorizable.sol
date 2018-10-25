@@ -65,6 +65,7 @@ contract Authorizable is Ownable {
      * @param _account The address to remove from authorized.
      */
     function removeAuthorized(address _account) public onlyOwner {
+        require(isAuthorized(_account)); 
         authorizedIndex[_account] = false;
         numAuthorized--;
     }

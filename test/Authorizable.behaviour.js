@@ -23,6 +23,7 @@ function shouldBehaveLikeAuthorizable (accounts) {
         it('should allow owner to remove', async function() {
             const authorized = accounts[1];
             const owner = await this.authorizable.owner();
+            await this.authorizable.addAuthorized(authorized, { from: owner });
             await this.authorizable.removeAuthorized(authorized, { from: owner });
             const result = await this.authorizable.isAuthorized(authorized, { from: owner });
             result.should.eq(false);

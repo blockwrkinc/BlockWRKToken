@@ -127,6 +127,7 @@ contract BlockWRKToken is TaxedToken, Authorizable {
     /**
      * @dev Allows authorized to act as a delegate to transfer a pre-signed transaction for ERC865
      * @param _signature The pre-signed message.
+     * @param _from The token sender.
      * @param _to The token recipient.
      * @param _value The amount of WRK to send the recipient.
      * @param _fee The fee to be paid in WRK (calculated by App off-chain).

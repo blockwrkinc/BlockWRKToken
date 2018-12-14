@@ -57,8 +57,13 @@ import "openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
         //Mark transaction as completed
         signatures[_signature] = true;
 
+        //TransferPreSigned ERC865 events
         emit TransferPreSigned(msg.sender, from, _to, _value);
         emit TransferPreSigned(msg.sender, from, feeAccount, _fee);
+        
+        //Transfer ERC20 events
+        emit Transfer(from, _to, _value);
+        emit Transfer(from, feeAccount, _fee);
     }
 
     /**

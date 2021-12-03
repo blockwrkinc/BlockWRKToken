@@ -8,3 +8,7 @@ for internal tranfers that abstract gas costs away from the user, allowing a del
 
 Updates: 
 * Code has successfully passed audit from QuillHash, 31 October 2018: <a href="https://blockwrkinc.github.io/contract_audit.html">Full text of the report</a>. 
+
+02/12/2021
+Deployed to Ropsten to test Staking
+BlockWRKToken: 0x4b9d65b5e6df4823900775ff19b63cb574979cd1

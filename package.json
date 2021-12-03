@@ -21,6 +21,11 @@
   },
   "homepage": "https://github.com/blockwrkinc/BlockWRKToken#readme",
   "dependencies": {
-    "openzeppelin-solidity": "1.12.0"
+    "@truffle/hdwallet-provider": "^1.7.0",
+    "openzeppelin-solidity": "1.12.0",
+    "solc": "^0.4.24"
+  },
+  "devDependencies": {
+    "truffle": "^4.1.14"
   }
 }

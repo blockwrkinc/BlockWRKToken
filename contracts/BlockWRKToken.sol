@@ -36,19 +36,19 @@ contract BlockWRKToken is TaxedToken, Authorizable {
 
     constructor() public {
         //Test values
-        // feeAccount = 0x2EDDEe216fFB08E01Cb67CA5B4F405FCbBB3C1fB;
-        // distributionPoolWallet = 0x5ad5f036280b996e28f49783089d96c77af1a6a6;
-        // inAppPurchaseWallet = 0x2EDDEe216fFB08E01Cb67CA5B4F405FCbBB3C1fB;
-        // reservedTokenWallet = 0x1A50DdEb4C1D1c8Fa46A4CdE40c11fd003157A32;
-        // premineDistributionPool = decimalValue.mul(5600000000);
-        // premineReserved = decimalValue.mul(2000000000);
-        // INITIAL_SUPPLY = premineDistributionPool.add(premineReserved);
-        // balances[distributionPoolWallet] = premineDistributionPool;
-        // emit Transfer(address(this), distributionPoolWallet, premineDistributionPool);
-        // balances[reservedTokenWallet] = premineReserved;
-        // emit Transfer(address(this), reservedTokenWallet, premineReserved);
-        // totalSupply_ = INITIAL_SUPPLY;
-        // taxRate = 2;
+        feeAccount = 0xf1614c0274832f0bE32ba40772a34D78C7b031b7;
+        distributionPoolWallet = 0x7221c4368a7b20dbD265E4ccA90449638150F106;
+        inAppPurchaseWallet = 0xFFDAAF4cb3DBBbEF6FFB33B037194c9430512292;
+        reservedTokenWallet = 0x7e985952Bf5C54aa388cF3960E10645e04Ed386a;
+        premineDistributionPool = decimalValue.mul(5600000000);
+        premineReserved = decimalValue.mul(2000000000);
+        INITIAL_SUPPLY = premineDistributionPool.add(premineReserved);
+        balances[distributionPoolWallet] = premineDistributionPool;
+        emit Transfer(address(this), distributionPoolWallet, premineDistributionPool);
+        balances[reservedTokenWallet] = premineReserved;
+        emit Transfer(address(this), reservedTokenWallet, premineReserved);
+        totalSupply_ = INITIAL_SUPPLY;
+        taxRate = 2;
     }
 
     /**
